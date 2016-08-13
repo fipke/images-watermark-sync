@@ -6,7 +6,7 @@ var fs = require('fs'),
 
 var inputDir = 'images/'
 var outputDir = 'output/'
-var logo_source = 'watermarks/wb2.png';
+var logo_source = 'watermarks/fpk.png';
 
 var watcher = chokidar.watch(inputDir, {
 	ignored: /[\/\\]\./,
@@ -98,7 +98,7 @@ function addWatermark(filePath) {
 		return gm(readStream)
 			.background('transparent')
 			.gravity('Center')
-			.resize(width, height)
+			// .resize(width/2, height/2)
 			.extent(size.width, size.height)
 			.toBuffer(function(err, buffer) {
 
